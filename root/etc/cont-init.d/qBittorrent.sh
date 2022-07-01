@@ -42,4 +42,5 @@ chown -R qbittorrent:qbittorrent /downloads
 #初始上传脚本
 if [ ! -e /upload/qb_auto.sh ]; then
   cp /usr/local/qbittorrent/qb_auto.sh /upload/qb_auto.sh
+  echo 上传脚本已初始化。
 fi
