@@ -2,7 +2,7 @@
 
 ### 整理自以下项目:
 
-脚本来源
+rclone上传脚本来源
 https://github.com/666wcy/qbittorent_rclone_upload
 
 qBittorrent来源
