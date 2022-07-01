@@ -38,8 +38,9 @@ https://github.com/rclone/rclone
            --restart unless-stopped \
            greedcrow/qbittorrent:v2.1
 
-===========================================================
-qBittorrent使用
+
+
+### qBittorrent使用
 
 ### 变量:
 
@@ -92,9 +93,6 @@ qBittorrent使用
 1. Trackers只有一个工作,新增的Trackers显示还未联系，需在qBittorrent.conf里 </br>旧：[Preferences]下增加Advanced\AnnounceToAllTrackers=true，</br>新：[BitTorrent]下增加Session\AnnounceToAllTrackers=true。
 
 
-========================================================
-上传脚本使用
-
 ## rclone配置
 
 在config文件夹下新建文件夹**rclone**，放入自己的**rclone.conf**配置文件
@@ -134,5 +132,5 @@ bash /upload/qb_auto.sh  "%N" "%F" "%R" "%D" "%C" "%Z" "%I"
 
 ## 效果展示
 
-![qb配置](https://github.com/jiotong/qbittorent_rclone_upload/raw/main/qb.png)
+![qb配置](https://github.com/jiotong/qbittorent_rclone/raw/main/qb.png)
 
