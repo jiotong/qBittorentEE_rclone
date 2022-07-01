@@ -6,8 +6,8 @@ ARG LIBTORRENT_VER=2.0.6
 ARG QBITTORRENT_VER=4.4.3.1
 ARG QBITTORRENT_EE_VER=4.4.3.12
 ENV HOME="/config" \
-XDG_CONFIG_HOME DEFAULT="/config" \
-XDG_DATA_HOME DEFAULT="/config"
+$XDG_CONFIG_HOME="/config" \
+$XDG_DATA_HOME="/config"
 
 RUN apk add --no-cache ca-certificates cmake build-base boost-dev python3-dev \
          py3-setuptools samurai qt6-qttools-dev libexecinfo-dev \
