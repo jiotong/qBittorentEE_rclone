@@ -98,7 +98,7 @@ https://github.com/rclone/rclone
 
 ## rclone配置
 
-在config文件夹下新建文件夹**rclone**，放入自己的**rclone.conf**配置文件
+在config配置文件夹下新建文件夹**rclone**，放入自己的**rclone.conf**配置文件
 
 
 ## 自动上传文件配置
