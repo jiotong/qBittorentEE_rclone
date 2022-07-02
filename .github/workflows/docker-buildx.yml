@@ -41,7 +41,7 @@ jobs:
             --platform linux/amd64,linux/arm64 \
             --output "type=image,push=true" \
             --file Dockerfile \
-            --t greedcrow/qbittorrent-rclone:v2.1
+            --tag greedcrow/qbittorrent-rclone:v2.1
             
     - name: Docker Push
       run: docker push greedcrow/qbittorrent-rclone:v2.1
