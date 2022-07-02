@@ -44,5 +44,5 @@ jobs:
             --tag  greedcrow/qbittorrent-rclone:v2.1
             
     - name: Docker Push
-      run: docker push  greedcrow/qbittorrent-rclone
+      run: docker push  greedcrow/qbittorrent-rclone:v2.1
     
