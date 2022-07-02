@@ -17,7 +17,7 @@ RUN apk add --no-cache ca-certificates cmake build-base boost-dev python3-dev \
 && cd /qbbuild/libtorrent-rasterbar-${LIBTORRENT_VER} \
 && cmake -B build -DCMAKE_BUILD_TYPE=None -DCMAKE_CXX_STANDARD=17 -DCMAKE_VERBOSE_MAKEFILE=ON \
          -DCMAKE_INSTALL_PREFIX=/usr -Dbuild_tests=ON -Dpython-bindings=ON -Dpython-egg-info=ON \
-&& cmake --build build -- -j 2 \
+&& cmake --build build -- -j 8 \
 && cmake --install build \
 && strip /usr/lib/libtorrent-rasterbar.so.2.0 \
 #qBittorrent-Enhanced-Edition
@@ -26,7 +26,7 @@ RUN apk add --no-cache ca-certificates cmake build-base boost-dev python3-dev \
 && cd /qbbuild/qBittorrent-Enhanced-Edition-release-${QBITTORRENT_EE_VER} \
 && cmake -B build-nox -G Ninja -D CMAKE_CXX_STANDARD_LIBRARIES="/usr/lib/libexecinfo.so" \
          -D CMAKE_CXX_STANDARD=17 -DCMAKE_BUILD_TYPE=Release -DQT6=ON -DGUI=OFF \
-&& cmake --build build-nox -- -j 2 \
+&& cmake --build build-nox -- -j 8 \
 && cmake --install build-nox \
 && strip /usr/local/bin/qbittorrent-nox \
 && mv /usr/local/bin/qbittorrent-nox /usr/local/bin/qbittorrentee-nox \
@@ -38,7 +38,7 @@ RUN apk add --no-cache ca-certificates cmake build-base boost-dev python3-dev \
 && wget -O /qbbuild/qBittorrent-release-${QBITTORRENT_VER}/src/base/net/downloadhandlerimpl.cpp https://raw.githubusercontent.com/qbittorrent/qBittorrent/af07a987849de7180226596f878203c6ea3070b2/src/base/net/downloadhandlerimpl.cpp \
 && cmake -B build-nox -G Ninja -D CMAKE_CXX_STANDARD_LIBRARIES="/usr/lib/libexecinfo.so" \
          -D CMAKE_CXX_STANDARD=17 -DCMAKE_BUILD_TYPE=Release -DQT6=ON -DGUI=OFF \
-&& cmake --build build-nox -- -j 2 \
+&& cmake --build build-nox -- -j 8 \
 && cmake --install build-nox \
 && strip /usr/local/bin/qbittorrent-nox \
 && mkdir /qbittorrent \
@@ -96,12 +96,9 @@ RUN if [ "$(uname -m)" = "x86_64" ];then s6_arch=amd64;elif [ "$(uname -m)" = "a
 && unzip rclone-v1.50.2-linux-${s6_arch}.zip \
 && cp ./rclone-*/rclone /usr/local/bin/ \
 && rm -rf ./rclone-* \
-&& chmod a+x /usr/local/bin/rclone \
-&& mkdir -p /root/.config/rclone \
-&& ln -s /config/rclone /root/.config/rclone
+&& chmod a+x /usr/local/bin/rclone
 
 # ports and volumes
 EXPOSE 8989 6881 6881/udp
 VOLUME /config /downloads /upload
 ENTRYPOINT [ "/init" ]
-
