@@ -39,7 +39,7 @@ https://github.com/rclone/rclone
            -v /下载位置:/downloads \
            -v /上传脚本位置:/upload \
            --restart unless-stopped \
-           greedcrow/qbittorrent-rclone:v2.1
+           greedcrow/qbittorrent-rclone:lastest
 
 
 
