@@ -35,6 +35,7 @@ https://github.com/rclone/rclone
            -p 6881:6881/udp \
            -p 8989:8989 \
            -v /配置文件位置:/config \
+           -v /配置文件位置:/root/.config \
            -v /下载位置:/downloads \
            -v /上传脚本位置:/upload \
            --restart unless-stopped \
