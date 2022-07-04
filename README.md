@@ -6,7 +6,7 @@ rclone上传脚本来源
 https://github.com/666wcy/qbittorent_rclone_upload
 
 qBittorrent来源
-https://github.com/gshang2017/docker/tree/master/qBittorrent
+https://github.com/SuperNG6/Docker-qBittorrent-Enhanced-Edition
 
 rclone
 https://github.com/rclone/rclone
@@ -15,32 +15,43 @@ https://github.com/rclone/rclone
 
 |名称|版本|说明|
 |:-|:-|:-|
-|qBittorrent-qBittorrentEE|4.4.3.1-4.4.3.12|(amd64;arm64v8;arm32v7) 集成Trackers自动更新|
-|rclone|1.50.2|(amd64;arm64v8;arm32v7) |
+|qBittorrentEE|4.3.9.10|(amd64;arm64)|
+|rclone|1.50.2|(amd64;arm64) |
 
 
 
 ### docker命令行设置：
 
 1. 创建qbittorrent容器
-
-        docker create \
-           --name=qbittorrent \
-           -e QB_WEBUI_PORT=8989 \
-           -e QB_EE_BIN=false \
-           -e UID=1000 \
-           -e GID=1000 \
-           -e UMASK=022 \
-           -p 6881:6881 \
-           -p 6881:6881/udp \
-           -p 8989:8989 \
+```bash
+        docker create  \
+           --name=qbittorrentee  \
+           -e WEBUIPORT=8080  \
+           -e PUID=1026 \
+           -e PGID=100 \
+           -e TZ=Asia/Shanghai \
+           -p 6881:6881  \           
+           -p 6881:6881/udp  \
+           -p 8080:8080  \
            -v /配置文件位置:/config \
-           -v /rclone配置文件位置:/root/.config \
            -v /下载位置:/downloads \
            -v /上传脚本位置:/upload \
            --restart unless-stopped \
-           greedcrow/qbittorrent-rclone:lastest
+           greedcrow/qbittorrentee-rclone:lastest
+```
 
+```bash
+          docker start qbittorrentee
+```
+```bash
+          docker restart qbittorrentee
+```
+```bash
+          docker stop qbittorrentee
+```
+```bash
+          docker rm qbittorrentee
+```
 
 
 ### qBittorrent使用
