@@ -41,6 +41,6 @@ jobs:
             --platform linux/amd64,linux/arm64 \
             --output "type=image,push=true" \
             --file Dockerfile \
-            --tag  greedcrow/qbittorrentee-rclone:v1.9
+            --tag  greedcrow/qbittorrentee-rclone:lastest
 
     
