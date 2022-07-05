@@ -15,15 +15,35 @@ https://github.com/rclone/rclone
 
 |名称|版本|说明|
 |:-|:-|:-|
-|qBittorrentEE|4.3.9.10|(amd64;arm64)|
+|qBittorrentEE|4.4.3.10|(amd64;arm64)|
 |rclone|1.50.2|(amd64;arm64) |
 
 
+-创建qbittorrent容器
+    ```bash
+        docker create  \
+           --name=qbittorrentee  \
+           -e QB_WEBUI_PORT=8080  \
+           -e PUID=1026 \
+           -e PGID=100 \
+           -e TZ=Asia/Shanghai \
+           -p 6881:6881  \           
+           -p 6881:6881/udp  \
+           -p 8080:8080  \
+           -v /配置文件位置:/config \
+           -v /下载位置:/downloads \
+           -v /上传脚本位置:/upload \
+           --restart unless-stopped \
+           greedcrow/qbittorrentee-rclone:lastest
+   ```
 
-### docker命令行设置：
+|名称|版本|说明|
+|:-|:-|:-|
+|qBittorrentEE|4.3.9.10|(amd64;arm64)|
+|rclone|1.50.2|(amd64;arm64) |
 
-1. 创建qbittorrent容器
-   ```bash
+-创建qbittorrent容器
+    ```bash
         docker create  \
            --name=qbittorrentee  \
            -e WEBUIPORT=8080  \
@@ -37,7 +57,7 @@ https://github.com/rclone/rclone
            -v /下载位置:/downloads \
            -v /上传脚本位置:/upload \
            --restart unless-stopped \
-           greedcrow/qbittorrentee-rclone:lastest
+           greedcrow/qbittorrentee-rclone:v1.8
      ```
 
      ```bash
