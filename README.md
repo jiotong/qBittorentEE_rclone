@@ -24,7 +24,7 @@ https://github.com/rclone/rclone
 ```bash
         docker create  \
            --name=qbittorrentee  \
-           -e QB_WEBUI_PORT=8080  \
+           -e WEBUI_PORT=8080  \
            -e PUID=1026 \
            -e PGID=100 \
            -e TZ=Asia/Shanghai \
