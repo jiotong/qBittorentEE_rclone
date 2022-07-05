@@ -13,7 +13,7 @@ DOWNLOAD_PATH='/downloads/'		#qb下载默认地址
 
 RETRY_NUM=3		#rclone上传重试次数
 
-qb_version="4.3.9"  #qb版本
+qb_version="4.4.3"  #qb版本
 qb_username="admin"        #qb用户名
 qb_password="adminadmin"        #qb密码
 qb_web_url="http://localhost:8080"   #qb web地址
