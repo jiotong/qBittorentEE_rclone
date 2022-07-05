@@ -86,7 +86,7 @@ https://github.com/rclone/rclone
 3. 一些搜索插件网站需过墙才能用
 4. jackett搜索插件需配置jackett.json(位置config/qBittorrent/data/nova3/engines)，插件需配合jackett服务的api_key。</br>可自行搭建docker版jackett(例如linuxserver/jackett)。
 
-```
+---
 ## rclone配置
 
 在config配置文件夹下新建文件夹**rclone**，放入自己的**rclone.conf**配置文件
@@ -96,7 +96,7 @@ https://github.com/rclone/rclone
 
 编辑upload文件夹下的qb_auto.sh文件![]()
 
-
+```
 the_dir="${save_dir//\/downloads\//}"	#如果你修改了主下载地址，请修改这里
 
 qb_version="4.3.9"	#qb版本
@@ -108,7 +108,7 @@ log_dir="/config/log"	#需要打印的日志地址
 rclone_dest="yun"		#需要上传的rclone驱动器名称
 rclone_parallel="32"	#rclone上传线程
 auto_del_flag="test"	#上传完成后将种子改变的分类名
-
+```
 
 默认上传后不删除文件，如果需要删除，将sh中所有的**#qb_del**的#号删除
 
