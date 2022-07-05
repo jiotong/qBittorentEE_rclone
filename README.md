@@ -45,7 +45,7 @@ https://github.com/rclone/rclone
 
 -创建qbittorrent容器
 
-    ```bash
+```bash
         docker create  \
            --name=qbittorrentee  \
            -e WEBUIPORT=8080  \
@@ -60,23 +60,23 @@ https://github.com/rclone/rclone
            -v /上传脚本位置:/upload \
            --restart unless-stopped \
            greedcrow/qbittorrentee-rclone:v1.8
-     ```
+```
 
-     ```bash
+```bash
           docker start qbittorrentee
-     ```
-     ```bash
+```
+```bash
           docker logs qbittorrentee
-     ```
-     ```bash
+```
+```bash
           docker restart qbittorrentee
-     ```
-     ```bash
+```
+```bash
           docker stop qbittorrentee
-     ```
-     ```bash
+```
+```bash
           docker rm qbittorrentee
-     ```
+```
 
 
 ### qBittorrent使用
