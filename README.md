@@ -16,7 +16,7 @@ https://github.com/rclone/rclone
 |名称|版本|说明|
 |:-|:-|:-|
 |qBittorrentEE|4.4.3.10|(amd64;arm64)|
-|rclone|1.50.2|(amd64;arm64) |
+|rclone|1.56.2|(amd64;arm64) |
 
 
 -创建qbittorrent容器
