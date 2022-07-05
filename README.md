@@ -1,4 +1,4 @@
-## 自用qBittorrent整合rclone自动上传脚本：
+## 自用qBittorrentee整合rclone自动上传脚本：
 
 ### 整理自以下项目:
 
