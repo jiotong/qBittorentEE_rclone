@@ -34,7 +34,8 @@ COPY root /
 COPY --from=builder  /qbittorrent/qbittorrent-nox   /usr/local/bin/qbittorrent-nox
 
 # install python3
-RUN  apt-get update && apt-get install -y python3 wget unzip \
+#RUN  apt-get update && apt-get install -y python3 wget unzip \
+RUN  apt-get update && apt-get install -y wget unzip \
 &&   rm -rf /tmp/*   \
 &&   chmod a+x  /usr/local/bin/qbittorrent-nox  
 
