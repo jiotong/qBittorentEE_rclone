@@ -1,11 +1,7 @@
 FROM lsiobase/ubuntu:bionic as builder
 LABEL maintainer="Krad"
 
-# environment settings
 WORKDIR /qbittorrent
-ENV HOME="/config" \
-XDG_CONFIG_HOME="/config" \
-XDG_DATA_HOME="/config"
 
 COPY install.sh /qbittorrent/
 COPY ReleaseTag /qbittorrent/
@@ -21,6 +17,7 @@ RUN cd /qbittorrent \
 FROM lsiobase/ubuntu:bionic
 
 # environment settings
+ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
 XDG_DATA_HOME="/config"
