@@ -35,8 +35,8 @@ RUN  apt-get update && apt-get install -y python3 wget unzip \
 
 # add rclone
 RUN if [ "$(uname -m)" = "x86_64" ];then s6_arch=amd64;elif [ "$(uname -m)" = "aarch64" ];then s6_arch=arm64;elif [ "$(uname -m)" = "armv7l" ];then s6_arch=arm; fi \
-&& wget --no-check-certificate https://github.com/rclone/rclone/releases/download/v1.50.2/rclone-v1.50.2-linux-${s6_arch}.zip \
-&& unzip rclone-v1.50.2-linux-${s6_arch}.zip \
+&& wget --no-check-certificate https://github.com/rclone/rclone/releases/download/v1.56.2/rclone-v1.56.2-linux-${s6_arch}.zip \
+&& unzip rclone-v1.56.2-linux-${s6_arch}.zip \
 && cp ./rclone-*/rclone /usr/local/bin/ \
 && rm -rf ./rclone-* \
 && chmod a+x /usr/local/bin/rclone
