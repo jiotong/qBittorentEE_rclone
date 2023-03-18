@@ -1,12 +1,18 @@
-FROM lsiobase/alpine:3.16 as builder
-LABEL maintainer="K"
+#FROM lsiobase/ubuntu:bionic as builder
+FROM lsiobase/debian:bullseye as builder
+LABEL maintainer="Krad"
 
+# environment settings
+ARG DEBIAN_FRONTEND="noninteractive"
 WORKDIR /qbittorrent
+ENV HOME="/config" \
+XDG_CONFIG_HOME="/config" \
+XDG_DATA_HOME="/config"
 
 COPY install.sh /qbittorrent/
 COPY ReleaseTag /qbittorrent/
 
-RUN  apk add --no-cache ca-certificates curl
+RUN  apt-get update && apt-get install -y unzip curl wget
 
 RUN cd /qbittorrent \
 	&& chmod a+x install.sh \
@@ -14,9 +20,14 @@ RUN cd /qbittorrent \
 
 # docker qBittorrent-Enhanced-Edition
 
-FROM lsiobase/alpine:3.12
+#FROM lsiobase/ubuntu:bionic
+FROM lsiobase/debian:bullseye
 
 # environment settings
+ARG DEBIAN_FRONTEND="noninteractive"
+ENV HOME="/config" \
+XDG_CONFIG_HOME="/config" \
+XDG_DATA_HOME="/config"
 ENV TZ=Asia/Shanghai
 ENV WEBUIPORT=8080
 
@@ -25,8 +36,9 @@ COPY root /
 COPY --from=builder  /qbittorrent/qbittorrent-nox   /usr/local/bin/qbittorrent-nox
 
 # install python3
-RUN  apk add --no-cache python3 \
-&&   rm -rf /var/cache/apk/*   \
+#RUN  apt-get update && apt-get install -y python3 wget unzip \
+RUN  apt-get update && apt-get install -y wget unzip \
+&&   rm -rf /tmp/*   \
 &&   chmod a+x  /usr/local/bin/qbittorrent-nox  
 
 # add rclone
