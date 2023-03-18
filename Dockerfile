@@ -1,9 +1,7 @@
-#FROM lsiobase/ubuntu:bionic as builder
-FROM lsiobase/debian:bullseye as builder
+FROM lsiobase/ubuntu:bionic as builder
 LABEL maintainer="Krad"
 
 # environment settings
-ARG DEBIAN_FRONTEND="noninteractive"
 WORKDIR /qbittorrent
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
@@ -20,11 +18,9 @@ RUN cd /qbittorrent \
 
 # docker qBittorrent-Enhanced-Edition
 
-#FROM lsiobase/ubuntu:bionic
-FROM lsiobase/debian:bullseye
+FROM lsiobase/ubuntu:bionic
 
 # environment settings
-ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
 XDG_DATA_HOME="/config"
