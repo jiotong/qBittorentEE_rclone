@@ -1,6 +1,6 @@
 #!/bin/bash
 
 docker build \
-  --tag greedcrow/qbittorrentee-rclone:v1.9 \
+  --tag greedcrow/qbittorrentee-rclone:lastest \
   --force-rm \
     .
