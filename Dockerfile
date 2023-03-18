@@ -1,4 +1,4 @@
-FROM lsiobase/ubuntu:bionic-fdaedb25-ls57 as builder
+FROM lsiobase/ubuntu:bionic as builder
 LABEL maintainer="Krad"
 
 # environment settings
@@ -18,7 +18,7 @@ RUN cd /qbittorrent \
 
 # docker qBittorrent-Enhanced-Edition
 
-FROM lsiobase/ubuntu:bionic-fdaedb25-ls57
+FROM lsiobase/ubuntu:bionic
 
 # environment settings
 ENV HOME="/config" \
