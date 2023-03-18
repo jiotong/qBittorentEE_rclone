@@ -9,4 +9,4 @@ umask "$UMASK_SET"
 # 启动qBittorrent
 
 exec \
-	s6-setuidgid abc qbittorrent-nox --webui-port=$WEBUIPORT --profile=/config -y
+	s6-setuidgid abc qbittorrent-nox --webui-port=$WEBUIPORT --profile=/config
