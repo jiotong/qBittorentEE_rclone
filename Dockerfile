@@ -20,6 +20,7 @@ RUN cd /qbittorrent \
 
 # docker qBittorrent-Enhanced-Edition
 
+#FROM lsiobase/ubuntu:bionic
 FROM lsiobase/debian:bullseye
 
 # environment settings
