@@ -1,4 +1,4 @@
-FROM lsiobase/ubuntu:bionic as builder
+FROM lsiobase/debian:bullseye as builder
 LABEL maintainer="Krad"
 
 WORKDIR /qbittorrent
@@ -14,7 +14,7 @@ RUN cd /qbittorrent \
 
 # docker qBittorrent-Enhanced-Edition
 
-FROM lsiobase/ubuntu:bionic
+FROM lsiobase/debian:bullseye
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
