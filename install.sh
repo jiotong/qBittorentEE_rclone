@@ -28,3 +28,4 @@ curl -L -o ${PWD}/qbittorrentee.zip https://github.com/c0re100/qBittorrent-Enhan
 echo "Download binary file: ${ARCH} completed"
 
 unzip qbittorrentee.zip
+rm qbittorrentee.zip
