@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 torrent_name=$1
 content_dir=$2
 root_dir=$3
